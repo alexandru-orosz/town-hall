@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" stylesheets="@../styles/vbox.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewDocumentsController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" styleClass="vbox" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox layoutX="184.0" layoutY="14.0" prefHeight="25.0" prefWidth="434.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#viewHome" stylesheets="@../styles/button.css" text="Home" />
+                  <Label prefHeight="25.0" prefWidth="6.0" />
+                  <Button mnemonicParsing="false" onAction="#viewUsers" stylesheets="@../styles/button.css" text="View Users" />
+                  <Label layoutX="59.0" layoutY="10.0" prefHeight="25.0" prefWidth="6.0" />
+                  <Button defaultButton="true" mnemonicParsing="false" stylesheets="@../styles/default_button.css" text="View Documents" />
+                  <Label layoutX="139.0" layoutY="10.0" prefHeight="25.0" prefWidth="6.0" />
+                  <Button mnemonicParsing="false" onAction="#viewUserRequests" stylesheets="@../styles/button.css" text="View User Requests" />
+                  <Label layoutX="250.0" layoutY="10.0" prefHeight="25.0" prefWidth="6.0" />
+                  <Button mnemonicParsing="false" onAction="#doSignout" stylesheets="@../styles/button.css" text="Sign Out" />
+               </children>
+            </HBox>
+            <TableView fx:id="tableView" layoutX="52.0" layoutY="108.0" prefHeight="421.0" prefWidth="303.0" stylesheets="@../styles/table_view.css" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0">
+              <columns>
+                <TableColumn fx:id="nameColumn" onEditCommit="#updateNameCell" prefWidth="301.0" text="Name" />
+              </columns>
+            </TableView>
+            <VBox layoutX="514.0" layoutY="238.0" prefHeight="125.0" prefWidth="159.0">
+               <children>
+                  <TextField fx:id="nameTextField" promptText="Name" stylesheets="@../styles/text_field.css" />
+                  <Label prefHeight="25.0" prefWidth="128.0" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addNewDocument" prefHeight="25.0" prefWidth="196.0" stylesheets="@../styles/button.css" text="Add New Document" />
+                  <Label layoutX="10.0" layoutY="35.0" prefHeight="25.0" prefWidth="128.0" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="60.0" mnemonicParsing="false" onAction="#deleteDocument" prefHeight="25.0" prefWidth="196.0" stylesheets="@../styles/button.css" text="Delete Document" />
+               </children>
+            </VBox>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

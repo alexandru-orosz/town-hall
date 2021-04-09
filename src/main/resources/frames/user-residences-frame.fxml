@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="vBox" prefHeight="600.0" prefWidth="800.0" styleClass="vbox" stylesheets="@../styles/vbox.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserResidencesController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox layoutX="237.0" layoutY="14.0" prefHeight="25.0" prefWidth="326.0">
+               <children>
+                  <Button fx:id="homeButton" mnemonicParsing="false" onAction="#viewHome" stylesheets="@../styles/button.css" text="Home" />
+                  <Label prefHeight="25.0" prefWidth="6.0" />
+                  <Button fx:id="yourResidencesButton" defaultButton="true" mnemonicParsing="false" stylesheets="@../styles/default_button.css" text="Your Residences" />
+                  <Label layoutX="59.0" layoutY="10.0" prefHeight="25.0" prefWidth="6.0" />
+                  <Button fx:id="yourRequestsButton" mnemonicParsing="false" onAction="#yourRequests" stylesheets="@../styles/button.css" text="Your Requests" />
+                  <Label layoutX="59.0" layoutY="10.0" prefHeight="25.0" prefWidth="6.0" />
+                  <Button fx:id="signOutButton" mnemonicParsing="false" onAction="#doSignout" stylesheets="@../styles/button.css" text="Sign Out" />
+               </children>
+            </HBox>
+            <TableView fx:id="tableView" layoutX="74.0" layoutY="105.0" prefHeight="219.0" prefWidth="653.0" stylesheets="@../styles/table_view.css">
+              <columns>
+                <TableColumn fx:id="nameColumn" onEditCommit="#updateNameCell" prefWidth="105.0" text="Name" />
+                <TableColumn fx:id="countryColumn" onEditCommit="#updateCountryCell" prefWidth="99.0" text="Country" />
+                  <TableColumn fx:id="cityColumn" onEditCommit="#updateCityCell" prefWidth="95.0" text="City" />
+                  <TableColumn fx:id="zipCodeColumn" onEditCommit="#updateZipCodeCell" prefWidth="72.0" text="Zip Code" />
+                  <TableColumn fx:id="streetColumn" onEditCommit="#updateStreetCell" prefWidth="126.0" text="Street" />
+                  <TableColumn fx:id="numberColumn" onEditCommit="#updateNumberCell" prefWidth="78.0" text="Number" />
+                  <TableColumn fx:id="apartmentColumn" onEditCommit="#updateApartmentCell" prefWidth="76.0" text="Apartment" />
+              </columns>
+            </TableView>
+            <VBox layoutX="133.0" layoutY="355.0" prefHeight="219.0" prefWidth="180.0">
+               <children>
+                  <TextField fx:id="nameTextField" promptText="Name" stylesheets="@../styles/text_field.css" />
+                  <HBox prefHeight="6.0" prefWidth="180.0" />
+                  <TextField fx:id="countryTextField" promptText="Country" stylesheets="@../styles/text_field.css" />
+                  <HBox layoutX="10.0" layoutY="35.0" prefHeight="6.0" prefWidth="180.0" />
+                  <TextField fx:id="cityTextField" promptText="City" stylesheets="@../styles/text_field.css" />
+                  <HBox layoutX="10.0" layoutY="66.0" prefHeight="6.0" prefWidth="180.0" />
+                  <TextField fx:id="zipCodeTextField" promptText="Zip Code" stylesheets="@../styles/text_field.css" />
+                  <HBox layoutX="10.0" layoutY="35.0" prefHeight="6.0" prefWidth="180.0" />
+                  <TextField fx:id="streetTextField" promptText="Street" stylesheets="@../styles/text_field.css" />
+                  <HBox layoutX="10.0" layoutY="159.0" prefHeight="6.0" prefWidth="180.0" />
+                  <TextField fx:id="numberTextField" promptText="Number" stylesheets="@../styles/text_field.css" />
+                  <HBox layoutX="10.0" layoutY="35.0" prefHeight="6.0" prefWidth="180.0" />
+                  <TextField fx:id="apartmentTextField" promptText="Apartment" stylesheets="@../styles/text_field.css" />
+               </children>
+            </VBox>
+            <VBox layoutX="543.0" layoutY="425.0" prefHeight="80.0" prefWidth="121.0">
+               <children>
+                  <Button fx:id="addResidenceButton" mnemonicParsing="false" onAction="#addNewResidence" prefHeight="25.0" prefWidth="131.0" stylesheets="@../styles/button.css" text="Add Residence" />
+                  <Label prefHeight="42.0" prefWidth="100.0" />
+                  <Button fx:id="deleteResidenceButton" mnemonicParsing="false" onAction="#deleteResidence" prefHeight="25.0" prefWidth="131.0" stylesheets="@../styles/button.css" text="Delete Residence" />
+               </children>
+            </VBox>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

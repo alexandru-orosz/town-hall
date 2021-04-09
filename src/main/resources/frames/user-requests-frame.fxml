@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" stylesheets="@../styles/vbox.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserRequestsController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" styleClass="vbox" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox layoutX="237.0" layoutY="14.0" prefHeight="25.0" prefWidth="326.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#viewHome" stylesheets="@../styles/button.css" text="Home" />
+                  <Label prefHeight="25.0" prefWidth="6.0" />
+                  <Button mnemonicParsing="false" onAction="#yourResidences" stylesheets="@../styles/button.css" text="Your Residences" />
+                  <Label layoutX="59.0" layoutY="10.0" prefHeight="25.0" prefWidth="6.0" />
+                  <Button defaultButton="true" mnemonicParsing="false" stylesheets="@../styles/default_button.css" text="Your Requests" />
+                  <Label layoutX="59.0" layoutY="10.0" prefHeight="25.0" prefWidth="6.0" />
+                  <Button mnemonicParsing="false" onAction="#doSignout" stylesheets="@../styles/button.css" text="Sign Out" />
+               </children>
+            </HBox>
+            <TableView fx:id="tableView" layoutX="62.0" layoutY="94.0" onMouseClicked="#selectRequest" prefHeight="292.0" prefWidth="677.0" stylesheets="@../styles/table_view.css">
+              <columns>
+                <TableColumn fx:id="dateColumn" prefWidth="138.0" text="Date" />
+                <TableColumn fx:id="documentColumn" prefWidth="258.0" text="Document" />
+                  <TableColumn fx:id="residenceColumn" prefWidth="143.0" text="Residence" />
+                  <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="136.0" text="Status" />
+              </columns>
+            </TableView>
+            <VBox layoutX="618.0" layoutY="435.0" prefHeight="0.0" prefWidth="121.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addNewRequest" prefHeight="25.0" prefWidth="131.0" stylesheets="@../styles/button.css" text="Add Request" />
+                  <Label prefHeight="0.0" prefWidth="121.0" />
+                  <Button mnemonicParsing="false" onAction="#updateRequest" prefHeight="25.0" prefWidth="131.0" stylesheets="@../styles/button.css" text="Update Request" />
+                  <Label layoutX="10.0" layoutY="35.0" prefHeight="0.0" prefWidth="121.0" />
+                  <Button layoutX="10.0" layoutY="65.0" mnemonicParsing="false" onAction="#deleteRequest" prefHeight="25.0" prefWidth="121.0" stylesheets="@../styles/button.css" text="Delete Request" />
+               </children>
+            </VBox>
+            <VBox layoutX="62.0" layoutY="449.0" prefHeight="80.0" prefWidth="197.0">
+               <children>
+                  <MenuButton fx:id="documentMenuButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="201.0" styleClass="menu-item" stylesheets="@../styles/menu-button.css" text="Document" />
+                  <Label prefHeight="30.0" prefWidth="203.0" />
+                  <MenuButton fx:id="residenceMenuButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" styleClass="menu-item" stylesheets="@../styles/menu-button.css" text="Residence" />
+               </children>
+            </VBox>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

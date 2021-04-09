@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vBox" prefHeight="600.0" prefWidth="800.0" stylesheets="@../styles/vbox.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserHomeController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" styleClass="vbox" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox layoutX="237.0" layoutY="14.0" prefHeight="25.0" prefWidth="326.0">
+               <children>
+                  <Button fx:id="homeButton" defaultButton="true" mnemonicParsing="false" stylesheets="@../styles/default_button.css" text="Home" />
+                  <Label prefHeight="25.0" prefWidth="6.0" />
+                  <Button fx:id="yourResidencesButton" mnemonicParsing="false" onAction="#yourResidences" stylesheets="@../styles/button.css" text="Your Residences" />
+                  <Label layoutX="59.0" layoutY="10.0" prefHeight="25.0" prefWidth="6.0" />
+                  <Button fx:id="yourRequestsButton" mnemonicParsing="false" onAction="#yourRequests" stylesheets="@../styles/button.css" text="Your Requests" />
+                  <Label layoutX="59.0" layoutY="10.0" prefHeight="25.0" prefWidth="6.0" />
+                  <Button fx:id="signOutButton" mnemonicParsing="false" onAction="#doSignout" prefHeight="25.0" prefWidth="65.0" stylesheets="@../styles/button.css" text="Sign Out" />
+               </children>
+            </HBox>
+            <Label fx:id="welcomeLabel" alignment="CENTER" layoutX="245.0" layoutY="183.0" prefHeight="28.0" prefWidth="311.0" stylesheets="@../styles/label.css" text="Welcome, user!">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="301.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../logos/user_logo.png" />
+               </image>
+            </ImageView>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
